@@ -25,8 +25,8 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(HOUR_BUTTON), hourUp, RISING);
 
   byte numDigits = 4;
-  byte digitPins[] = {2, 3, 4, 5};
-  byte segmentPins[] = {6, 7, 8, 9, 10, 11, 12, 13};
+  byte digitPins[] = {d1, d2, d3, d4};
+  byte segmentPins[] = {a, b, c, d, e, f, g, dp};
   sevseg.begin(COMMON_CAODE, numDigits, digitPins, segmentPins);
 }
 
