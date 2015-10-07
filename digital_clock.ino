@@ -16,6 +16,8 @@
 #define dp 0
 #define HOUR_BUTTON 2
 
+SevSeg sevseg;
+
 volatile int hour = 1;
 
 void setup() {
@@ -27,13 +29,13 @@ void setup() {
   byte numDigits = 4;
   byte digitPins[] = {d1, d2, d3, d4};
   byte segmentPins[] = {a, b, c, d, e, f, g, dp};
-  sevseg.begin(COMMON_CAODE, numDigits, digitPins, segmentPins);
+  sevseg.begin(COMMON_CATHODE, numDigits, digitPins, segmentPins);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   sevseg.setNumber(hour * 100, 3);
-  refreshDisplay();
+  sevseg.refreshDisplay();
 }
 
 void hourUp() {
